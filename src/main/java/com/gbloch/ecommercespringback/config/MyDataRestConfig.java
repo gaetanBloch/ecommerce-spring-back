@@ -1,6 +1,7 @@
 package com.gbloch.ecommercespringback.config;
 
 import com.gbloch.ecommercespringback.model.Product;
+import com.gbloch.ecommercespringback.model.ProductCategory;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -25,5 +26,12 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 .withCollectionExposure(((metadata, httpMethods)
                         -> httpMethods.disable(unsupportedMethods)));
 
+        // Disable HTTP methods for product categories: POST, PUT and DELETE
+        config.getExposureConfiguration()
+                .forDomainType(ProductCategory.class)
+                .withItemExposure(((metadata, httpMethods)
+                        -> httpMethods.disable(unsupportedMethods)))
+                .withCollectionExposure(((metadata, httpMethods)
+                        -> httpMethods.disable(unsupportedMethods)));
     }
 }
