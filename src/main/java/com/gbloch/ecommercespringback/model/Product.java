@@ -18,7 +18,7 @@ import java.util.Date;
 @Setter
 @Builder
 @Entity
-@Table(name="product")
+@Table(name = "product")
 public class Product {
 
     @Id
