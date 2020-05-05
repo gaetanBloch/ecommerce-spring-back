@@ -3,6 +3,7 @@ package com.gbloch.ecommercespringback.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * @author Gaëtan Bloch
@@ -24,4 +25,7 @@ public class ProductCategory {
 
     @Column(name = "category_name")
     private String categoryName;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    private Set<Product> products;
 }
