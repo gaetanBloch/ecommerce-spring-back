@@ -16,7 +16,7 @@
     <description>Spring Boot e-commerce Project</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>14</java.version>
         <springfox-swagger.version>3.0.0-SNAPSHOT</springfox-swagger.version>
     </properties>
 
@@ -91,8 +91,13 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
