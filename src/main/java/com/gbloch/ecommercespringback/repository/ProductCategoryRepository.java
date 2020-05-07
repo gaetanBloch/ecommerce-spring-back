@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
  * Created on 05/05/2020
  */
 @CrossOrigin("http://localhost:4200")
-@RepositoryRestResource(collectionResourceRel = "product_categories", path = "product-categories")
+@RepositoryRestResource(path = "product-categories", collectionResourceRel = "product_categories")
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
 }
