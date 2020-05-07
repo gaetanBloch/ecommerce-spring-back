@@ -9,6 +9,9 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 
 import javax.persistence.EntityManager;
+import javax.persistence.metamodel.EntityType;
+import javax.persistence.metamodel.Type;
+import java.util.Set;
 
 /**
  * @author Gaëtan Bloch
@@ -29,6 +32,8 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         // Disable HTTP methods for product categories: POST, PUT and DELETE
         makeProductCategoriesReadOnly(config, unsupportedMethods);
+
+        exposeIds(config);
     }
 
     /**
@@ -54,12 +59,30 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
      * @param unsupportedMethods Unsupported HTTP requests
      */
     private void makeProductCategoriesReadOnly(RepositoryRestConfiguration config,
-                                      HttpMethod[] unsupportedMethods) {
+                                               HttpMethod[] unsupportedMethods) {
         config.getExposureConfiguration()
                 .forDomainType(ProductCategory.class)
                 .withItemExposure(((metadata, httpMethods)
                         -> httpMethods.disable(unsupportedMethods)))
                 .withCollectionExposure(((metadata, httpMethods)
                         -> httpMethods.disable(unsupportedMethods)));
+    }
+
+    /**
+     * Expose ids of all entities in the endpoints
+     *
+     * @param config Configuration
+     */
+    private void exposeIds(RepositoryRestConfiguration config) {
+        // Get a list of entity classes from the entity manager
+        Set<EntityType<?>> entities = entityManager.getMetamodel().getEntities();
+
+        // Get the entity classes for all entities
+        Class<?> [] entityClasses = entities.stream()
+                .map(Type::getJavaType)
+                .toArray(Class[]::new);
+
+        // Expose the entity ids for the list if entity/domain types
+        config.exposeIdsFor(entityClasses);
     }
 }
