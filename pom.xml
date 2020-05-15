@@ -15,7 +15,7 @@
   <name>ecommerce-spring-back</name>  
   <description>Spring Boot e-commerce Project</description>  
   <properties> 
-    <java.version>11</java.version>
+    <java.version>14</java.version>
     <springfox-swagger.version>3.0.0-SNAPSHOT</springfox-swagger.version> 
   </properties>  
   <dependencies> 
