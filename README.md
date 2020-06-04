@@ -13,8 +13,8 @@ To see the front-end of this application implemented with Angular, see [here](ht
 
 1. Download the application by clicking [here](https://github.com/gaetanBloch/ecommerce-spring-back/archive/master.zip)
 2. Unzip the application
-3. Dowload and Install [Java 14](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html)
-4. Set the environment variable `JAVA_HOME` to the root of your Java 14 jdk
+3. Dowload and Install [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+4. Set the environment variable `JAVA_HOME` to the root of your Java 11 jdk
 5. Download and Install [Maven](https://maven.apache.org/download.cgi)
 6. Open a terminal
 7. Move to the root of the application
