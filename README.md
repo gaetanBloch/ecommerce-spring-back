@@ -3,9 +3,9 @@
 
 This application was built using [Java 11](https://jdk.java.net/11/), [Spring 5](https://spring.io/), [Spring Boot 2](https://spring.io/projects/spring-boot), [Spring Data Rest](https://spring.io/projects/spring-data-rest), [Hibernate ORM](https://hibernate.org/) and [MySQL Database](https://www.mysql.com/). It is a REST API back-end for the e-commerce application called **luv2shop**.
 
-**The Full Stack Application with Angular front-end was deployed on Google Cloud, to access it, click [here](https://gbloch-luv2shop.ew.r.appspot.com/).**
+**The Full Stack Application with Java / Spring Boot back-end was deployed on Cloud Foundry, to access it, click [here](https://gbloch-luv2shop.cfapps.io/).**
 
-**The Full Stack Application with Angular front-end was deployed on Cloud Foundry, to access it, click [here](https://gbloch-luv2shop.cfapps.io/).**
+**The Full Stack Application with Angular front-end was deployed on Google Cloud Platform, to access it, click [here](https://gbloch-luv2shop.ew.r.appspot.com/).**
 
 To see the front-end of this application implemented with Angular, see [here](https://github.com/gaetanBloch/ecommerce-angular-front).
 
